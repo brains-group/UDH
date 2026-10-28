@@ -1,0 +1,49 @@
+# secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Python / editors / OS
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+
+# run-time state written by the runners (rebuilt on demand, never needed to read the results)
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.log
+*.pid
+evaluation_scripts/run_logs/
+**/checkpoint/
+**/checkpoints/
+**/data/corpus.jsonl
+# indexes, embeddings and caches (several GB; rebuilt by the run scripts)
+*.graphml
+*.npz
+*.npy
+*.pkl
+*.pickle
+*.parquet
+*.lance
+*.index
+**/llm_cache/
+**/work/
+evaluation_scripts/logicrag/cache/
+evaluation_scripts/ms_graphrag/caches/
+evaluation_scripts/hygrag/data/
+evaluation_scripts/hygrag/HyGRAG/Result/
+evaluation_scripts/*/outputs/**/vdb_*.json
+evaluation_scripts/*/outputs/**/kv_store_*.json
+evaluation_scripts/*/outputs/**/openie_results_*.json
+evaluation_scripts/*/outputs/**/knowledge.json
+evaluation_scripts/*/outputs/**/predictions.json
+evaluation_scripts/*/outputs/**/qa_results.json
+evaluation_scripts/*/outputs/**/local_search_contexts.json
+evaluation_scripts/unh/outputs/**/corpus.txt

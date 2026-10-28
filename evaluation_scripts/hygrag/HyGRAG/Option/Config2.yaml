@@ -1,0 +1,26 @@
+# [UDH] The user config HyGRAG's README says to fill in with your own LLM / embedding. Upstream values:
+#   llm: openai, https://api.openai.com/v1, gpt-4o, YOUR_API_KEY, max_concurrent 20
+#   embedding: hf, ./Embedding_Model/bge-m3, dimensions 1024, max_token_size 8192, embed_batch_size 16,
+#              embedding_func_max_async 16
+# evaluation_scripts/hygrag/main.py sets the real key (DEEPSEEK_API_KEY), models, concurrency, temperature and
+# paths at runtime; the key is never written to disk. `dimensions` is left out: the vLLM voyage-4-nano server
+# rejects it, and the native size (2048) matches cleora_dim in config/HKGraphTreeLSH.yaml.
+llm:
+  api_type: "openai"
+  base_url: "https://api.deepseek.com"
+  model: "deepseek-flash"
+  api_key: "set-at-runtime-by-main.py"
+  max_concurrent: 500
+  temperature: 1.0
+
+embedding:
+  api_type: "openai"
+  base_url: "http://localhost:8001/v1"
+  model: "voyageai/voyage-4-nano"
+  api_key: "EMPTY"
+  embed_batch_size: 16
+
+data_root: "./Data"
+
+working_dir: ./Result/HyGRAG/
+exp_name: experiment
